@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Plane</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #panel{
+            position: fixed;
+            right: 0;
+            width: 35%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #viewer{
+            position: absolute;
+            border: 0;
+            left: 0;
+            width: 65%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+    </style>
+    <script>
+        function openTab(tabColor) {
+            var i, tablinks;
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+                tablinks[i].className = tablinks[i].className.replace(" w3-purple", "");
+                tablinks[i].className = tablinks[i].className.replace(" w3-green", "");
+                tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
+                tablinks[i].className = tablinks[i].className.replace(" w3-yellow", "");
+                tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
+            }
+            document.getElementById(tabColor).style.display = "block";
+
+            switch (tabColor){
+                case 'red' :
+                    document.getElementById('red').className += " w3-red";
+                    document.getElementById('red').click();
+                    break;
+                case 'purple' :
+                    document.getElementById('purple').className += " w3-purple";
+                    document.getElementById('purple').click();
+                    break;
+                case 'green' :
+                    document.getElementById('green').className += " w3-green";
+                    document.getElementById('green').click();
+                    break;
+                case 'blue' :
+                    document.getElementById('blue').className += " w3-blue";
+                    document.getElementById('blue').click();
+                    break;
+                case 'yellow' :
+                    document.getElementById('yellow').className += " w3-yellow";
+                    document.getElementById('yellow').click();
+                    break;
+                case 'black' :
+                    document.getElementById('black').className += " w3-black";
+                    document.getElementById('black').click();
+                    break;
+            }
+        }
+        function openTabFromClick(tabColor) {
+            var i, tablinks;
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+                tablinks[i].className = tablinks[i].className.replace(" w3-purple", "");
+                tablinks[i].className = tablinks[i].className.replace(" w3-green", "");
+                tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
+                tablinks[i].className = tablinks[i].className.replace(" w3-yellow", "");
+                tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
+            }
+            document.getElementById(tabColor).style.display = "block";
+
+            switch (tabColor){
+                case 'red' :
+                    document.getElementById('red').className += " w3-red";
+                    break;
+                case 'purple' :
+                    document.getElementById('purple').className += " w3-purple";
+                    break;
+                case 'green' :
+                    document.getElementById('green').className += " w3-green";
+                    break;
+                case 'blue' :
+                    document.getElementById('blue').className += " w3-blue";
+                    break;
+                case 'yellow' :
+                    document.getElementById('yellow').className += " w3-yellow";
+                    break;
+                case 'black' :
+                    document.getElementById('black').className += " w3-black";
+                    break;
+            }
+        }
+
+    </script>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://use.fontawesome.com/aa95071b26.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<iframe src="plane.html" id="viewer" name="viewer" scrolling="no">
+</iframe>
+
+
+<div id="panel">
+    <div id="body">
+        <div class="out-wrap">
+            <ul id="tabs" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" id="red" aria-controls="home" role="tab" data-toggle="tab" class="tablink w3-red" onclick="openTabFromClick('red')">Home</a></li>
+                <li role="presentation"><a href="#profile" id="purple" aria-controls="profile" role="tab" data-toggle="tab" class="tablink" onclick="openTabFromClick('purple')">Academia</a></li>
+                <li role="presentation"><a href="#messages" id="green" aria-controls="messages" role="tab" data-toggle="tab" class="tablink" onclick="openTabFromClick('green')">Projects</a></li>
+                <li role="presentation"><a href="#settings" id="blue" aria-controls="settings" role="tab" data-toggle="tab" class="tablink" onclick="openTabFromClick('blue')">WORK EXP</a></li>
+                <li role="presentation"><a href="#about" id="yellow" aria-controls="about" role="tab" data-toggle="tab" class="tablink" onclick="openTabFromClick('yellow')">HOBBIES</a></li>
+                <li role="presentation"><a href="#foryou" id="black" aria-controls="foryou" role="tab" data-toggle="tab" class="tablink" onclick="openTabFromClick('black')">CONTACT</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <h3>Hey there !</h3> <br>
+                    My name is <b>Debaspreet Chowhdury</b>. This is my first attempt at learning three.js/web GL.
+                    So I thought it would be cool to wrap the learnings into a personal portfolio website.<br><br>
+                    To navigate around, you can either smash the colored orbs with the airplane OR use the menu above OR use a combination of both.<br><br>
+                    Each colored orb corresponds to the same colored menu tab. <br><br>
+                    <h3 style="text-align: right">Cheers !</h3>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="profile" >
+                    <p>I recently completed my <b>Masters</b> in Telecommunication Engineering with specialization in Computer Science from
+                        <a href="https://www.utdallas.edu/" target="_blank"><b>The University of Texas at Dallas</b></a>.
+                        Following is a part of the coursework that I enjoyed taking and doing the projects in : <br><br>
+                        <a href="http://utdallas.edu/~ksarac/netsec/index.htm" target="_blank">Network Security,</a>
+                        <a href="http://www.utdallas.edu/~muratk/courses/db08.htm" target="_blank">Database Design,</a>
+                        <a href="http://utdallas.edu/~ksarac/netsec/index.htm" target="_blank">Design and Analysis of Computer Algorithms,</a>
+                        <a href="http://www.utdallas.edu/~praba/cs6378.html" target="_blank">Distributed Systems and Advanced Operating Systems,</a>
+                        <a href="http://www.utdallas.edu/~jjue/cs6352/" target="_blank">Performance of Computer Systems and Networks,</a>
+                        <a href="http://www.utdallas.edu/~ksarac/acn/index.htm" target="_blank">Advanced Computer Networks</a><br><br>
+
+                        I did my <b>Bachelors</b> in Electronics and Communications Engineering from
+                        <a href="https://manipal.edu/mit.html" target="_blank"><b>Manipal Institute of Technology,India</b></a>.
+                    </p>
+
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="messages" >
+                    <p>
+                        I have used the <a href="https://docs.google.com/document/d/1W54caDO4RC8vhMW2ZFw_d__0MjRso0KtFzWB3YDxq-E/edit?usp=sharing" target="_blank">
+                        <b>Java ecosystem</b> </a>for most of web and desktop development and <a href="https://docs.google.com/document/d/1W54caDO4RC8vhMW2ZFw_d__0MjRso0KtFzWB3YDxq-E/edit?usp=sharing" target="_blank">
+                        <b>Python ecosystem</b></a>
+                        for graph algorithm related projects and Apache Spark. MS Hololens development is on my wishlist :)
+                        Following are some of the projects :<br><br>
+
+
+                    </p>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="settings" >
+                    Resume in the
+                    <a href="#foryou" id="black" aria-controls="foryou" role="tab" data-toggle="tab" class="tablink" onclick="openTabFromClick('black')"><b>contact</b></a> tab.<br><br>
+                    While pursuing my masters degree, I was involved with <a href="https://www.sustlabs.com/" target="_blank">
+                    <b>Sustlabs</b></a> in rapid prototyping of an OCR based cloud native open source solution
+                    to electric and gas meter readings in an angile setup. Before that, I worked with <a href="http://www.goldmansachs.com/index.html" target="_blank">
+                    <b>Goldman Sachs</b></a>
+                    on report migrations and development of a full stack web solution for script execution.
+                    Prior to that My work at
+                    <a href="https://www.ericsson.com/en" target="_blank"><b>Ericsson</b></a>
+                    included dealing with perl, bash and legacy scripts in a linux environment for network
+                    configuration,integration and migration.
+                    At <a href="https://www.tcs.com/" target="_blank"><b>TCS</b></a> I integrated SAP, Oracle & Windows system for the client Johnson & Johnson using WebMethods.
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="about" >
+                    Nowadays any spare time I have goes into youtubing,<b>oil painting</b>,playing <b>violin</b>, paying the swan chromatic <b>harmonica</b> I have,
+                    <b>cooking</b> various cuisines , <b>baking</b>, talking to <b>friends</b>, daydreaming and listening
+                    to <b>psybient</b> music. My recent fascination are the various block chain <b>crypto currencies</b>.
+                    I believe that <b>AR</b> is more powerful than <b>VR</b>.
+                    In the past I have mused over books,video games, body building and philosophy.
+                    I do <b>yoga</b> and <b>reiki</b> on a daily basis.
+                    I believe some degree of <b>spiritualism</b> in life Keeps mind balanced and fosters steady growth in any society.
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="foryou" >
+                    <br>
+                    <h5>Download Resume</h5><br>
+                    <h5>devopreet.ch@gmail.com</h5><br><br>
+                    <a href="https://github.com/papillon88" target="_blank"><h4>Github</h4><br></a>
+                    <a href="https://stackoverflow.com/users/2304316/papillon88" target="_blank"><h4>Stack Overflow</h4><br></a>
+                    <a href="https://www.linkedin.com/in/debaspreet/" target="_blank"><h4>LinkedIn</h4><br></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</div>
+
+</body>
+</html>
